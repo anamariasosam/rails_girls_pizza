@@ -21,9 +21,9 @@
         <td><%= pizza.price %></td>
         <td><%= pizza.ingredients %></td>
         <td><%= link_to 'Show', pizza %></td>
-        <td><%= link_to 'Votar', pizza_votes_path(pizza) %></td>
+        <td><%= link_to 'Votar', pizza_votes_path(pizza), method: :put %></td>
         <td><%= link_to 'Edit', edit_pizza_path(pizza) %></td>
-        <td><%= link_to 'Destroy', pizza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', pizza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
