@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mi aplicación de votos de Pizzas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Votes</th>
+      <th>Price</th>
+      <th>Ingredients</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pizzas.each do |pizza| %>
+      <tr>
+        <td><%= pizza.name %></td>
+        <td><%= pizza.votes %></td>
+        <td><%= pizza.price %></td>
+        <td><%= pizza.ingredients %></td>
+        <td><%= link_to 'Show', pizza %></td>
+        <td><%= link_to 'Votar', pizza_votes_path(pizza) %></td>
+        <td><%= link_to 'Edit', edit_pizza_path(pizza) %></td>
+        <td><%= link_to 'Destroy', pizza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pizza', new_pizza_path %>
